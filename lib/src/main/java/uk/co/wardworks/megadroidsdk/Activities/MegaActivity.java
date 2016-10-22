@@ -8,14 +8,21 @@ import android.view.View;
 
 import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.*;
 import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.Values.*;
+import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.Keys.*;
 
 /**
  * Created by Gus on 21/10/2016.
  */
 public abstract class MegaActivity extends Activity {
 
-    protected final String TAG = this.getLocalClassName();
+    public final String TAG = this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1);
     private State state = PRECEDING;
+
+    public State getState(){
+
+        return state;
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +75,16 @@ public abstract class MegaActivity extends Activity {
 
     private void processIntentExtras(Intent intent){
 
-        setDecorMode(intent.getIntExtra(Keys.DECOR_MODE, -1));
+        finishActivity(intent.getBooleanExtra(FINISH_APP, false));
+        setDecorMode(intent.getIntExtra(DECOR_MODE, -1));
+
+    }
+
+    private void finishActivity(boolean finish){
+
+        if(finish){
+            finish();
+        }
 
     }
 
@@ -130,6 +146,7 @@ public abstract class MegaActivity extends Activity {
     public static class Keys{
 
         public static final String DECOR_MODE = "decor";
+        public static final String FINISH_APP = "finish";
 
     }
 
