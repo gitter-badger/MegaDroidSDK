@@ -3,36 +3,32 @@ package uk.co.wardworks.megadroidsdk.MegaActivity;
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
 
-import java.util.Arrays;
-
-import uk.co.wardworks.megadroidsdk.Activities.MegaActivity;
-
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.CREATED;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.DESTROYED;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.PAUSED;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.RESUMED;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.STARTED;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.STOPPED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.CREATED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.DESTROYED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.PAUSED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.RESUMED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.STARTED;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.STOPPED;
 
 /**
  * Created by Gus on 22/10/2016.
  */
-public class MegaActivityTest extends ActivityUnitTestCase<MyMegaActivity> {
+public class ActivityMegaTest extends ActivityUnitTestCase<MyActivityMega> {
 
-    MyMegaActivity myMegaActivity;
+    MyActivityMega myMegaActivity;
 
-    public MegaActivityTest(){
-        super(MyMegaActivity.class);
+    public ActivityMegaTest(){
+        super(MyActivityMega.class);
     }
 
-    public MegaActivityTest(Class<MyMegaActivity> activityClass) {
+    public ActivityMegaTest(Class<MyActivityMega> activityClass) {
         super(activityClass);
     }
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        startActivity(new Intent(getInstrumentation().getTargetContext(), MyMegaActivity.class), null, null);
+        startActivity(new Intent(getInstrumentation().getTargetContext(), MyActivityMega.class), null, null);
         myMegaActivity = getActivity();
     }
 

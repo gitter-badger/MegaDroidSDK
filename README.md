@@ -3,12 +3,34 @@ Android library for handy and commonly used code across projects, please contrib
 
 ## Features
 
-### MegaActivity
+## Activities
 
-#### An Activity sub class with the following extras built in:
+### ActivityMega
+ 
+#### An Activity class with the following extras built in:
 
 * TAG with name of class
-* State awareness
-* Visibility awareness
-* Decor mode setter
+* State aware
+* Visibility aware
+* Set decor mode
 * Finish intent action
+
+## Threading
+
+### PeriodicTask 
+
+#### Handler wrapper for periodic tasks:
+
+* Set interval, max loops and UI enabled
+* Stop / start at any time
+* State aware
+
+```java
+PeriodicTask periodicTask = new PeriodicTask(
+                runnable,
+                period,
+                loops,
+                uiThread
+);
+periodicTask.start();
+```

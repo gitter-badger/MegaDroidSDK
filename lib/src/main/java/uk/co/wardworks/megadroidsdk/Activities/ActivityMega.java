@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.State.*;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.Values.*;
-import static uk.co.wardworks.megadroidsdk.Activities.MegaActivity.Keys.*;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.State.*;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.Values.*;
+import static uk.co.wardworks.megadroidsdk.Activities.ActivityMega.Keys.*;
 
 /**
  * Created by Gus on 21/10/2016.
  */
-public abstract class MegaActivity extends Activity {
+public abstract class ActivityMega extends Activity {
 
     public final String TAG = this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1);
     private State state = PRECEDING;

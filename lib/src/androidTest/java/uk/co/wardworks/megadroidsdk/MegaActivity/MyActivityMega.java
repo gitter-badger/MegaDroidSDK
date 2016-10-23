@@ -5,12 +5,12 @@ import android.os.PersistableBundle;
 
 import java.util.ArrayList;
 
-import uk.co.wardworks.megadroidsdk.Activities.MegaActivity;
+import uk.co.wardworks.megadroidsdk.Activities.ActivityMega;
 
 /**
  * Created by Gus on 22/10/2016.
  */
-public class MyMegaActivity extends MegaActivity {
+public class MyActivityMega extends ActivityMega {
 
     public ArrayList<State> states = new ArrayList<>();
 
